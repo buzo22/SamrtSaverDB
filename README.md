@@ -1,83 +1,48 @@
-# 💰 SmartSaverDB
+# SmartSaverDB
 
-SmartSaverDB is a SQL Server-based project that simulates the core database structure for a personal savings and withdrawal application. It contains structured tables for users, savings accounts, savings plans, and withdrawal tracking. This project is designed for SQL proficiency assessment, learning, and portfolio demonstration purposes.
+SmartSaverDB is a mock SQL Server database project designed to simulate a savings and withdrawal application. It features users, savings accounts, savings plans, and withdrawal records. This project is ideal for learning and assessing SQL proficiency in relational database design, data manipulation, and querying.
 
----
+## 🧠 Features
 
-## 📁 Project Structure
+- Normalized relational database schema
+- Sample data for realistic analysis
+- Views and stored procedures for business logic
+- Queries to derive key insights
 
-This repository includes:
+## 🏗️ Database Schema
 
-- `SmartSaverDB.sql`: Full SQL Server-compatible script to:
-  - Create the database and tables
-  - Define primary and foreign keys
-  - Insert sample data
+- **users_customuser**: Contains user data
+- **savings_savingsaccount**: Tracks savings balance and associated users
+- **plans_plan**: Savings plans and expected contributions
+- **withdrawals_withdrawal**: Records of user withdrawals
 
----
+## 🚀 Getting Started
 
-## 🧠 Database Schema
-users_customuser
-├── id (PK)
-├── email
-├── full_name
-├── date_joined
+### Requirements
 
-savings_savingsaccount
-├── id (PK)
-├── user_id (FK → users_customuser.id)
-├── balance
-├── created_at
+- SQL Server (2017+)
+- SSMS or Azure Data Studio
 
-plans_plan
-├── id (PK)
-├── user_id (FK → users_customuser.id)
-├── title
-├── target_amount
-├── frequency
-├── start_date
-├── end_date
+### Setup
 
-withdrawals_withdrawal
-├── id (PK)
-├── savings_account_id (FK → savings_savingsaccount.id)
-├── amount
-├── withdrawal_date
+1. Open SQL Server Management Studio (SSMS)
+2. Run the combined SQL script `SmartSaverDB.sql` to:
+   - Create the database
+   - Create tables
+   - Insert sample data
+   - Create views and stored procedures
 
+## 🧪 Sample Queries
 
+- View total savings and withdrawals by user
+- Retrieve users on a specific savings plan
+- Monitor account balances
 
----
+## 🔄 Reset
 
-## 📦 Sample Data
+To reset the database, you can re-run the script after deleting the existing database.
 
-The script inserts sample records for:
+```sql
+DROP DATABASE SmartSaverDB;
 
-- **3 users** with names and emails
-- **3 savings accounts**, one per user
-- **3 savings plans** with weekly, monthly, and one-time goals
-- **3 withdrawals**, one per account
-
----
-
-## ⚙️ How to Use
-
-### 🖥️ Requirements
-
-- SQL Server (2019+ recommended)
-- SQL Server Management Studio (SSMS) or Azure Data Studio
-
-### 🚀 Setup Steps
-
-1. **Clone this repository**
-
-```bash
-git clone https://github.com/your-username/SmartSaverDB.git
-cd SmartSaverDB
-
-
-🙋‍♂️ Author
-
-Chibuzo Valentine Akana
-📄 License
-
-This project is licensed for personal or educational use. Feel free to fork, modify, or use it in portfolios. No warranties provided.
 
